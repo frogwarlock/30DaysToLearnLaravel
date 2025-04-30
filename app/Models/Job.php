@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Job extends Model {
@@ -15,5 +14,9 @@ class Job extends Model {
 
     public function employer(){
         return $this->belongsTo(Employer::class);
+    }
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class,  foreignPivotKey: "job_listing_id");
     }
 }
