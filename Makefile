@@ -60,3 +60,6 @@ net:
 
 stat:
 	docker stats
+
+fixPermission:
+	echo 'rodar ./fix-perms.sh'
