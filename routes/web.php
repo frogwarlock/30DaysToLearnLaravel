@@ -11,7 +11,7 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-    $jobs = Job::with('employer')->paginate(4); //eager loading - reduce sql queries.
+    $jobs = Job::with('employer')->simplePaginate(4); //eager loading - reduce sql queries.
 
     return view('jobs', [
         'jobs' => $jobs
