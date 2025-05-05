@@ -19,12 +19,6 @@ stop:
 restart:
 	docker compose restart
 
-clean: down
-	docker system prune -af
-	docker volume prune -f
-
-rebuild: clean build
-
 status:
 	docker compose ps
 
@@ -43,12 +37,12 @@ mysql:
 	docker exec -it mysql mysql -uroot -ppassword
 
 .PHONY: perm
-f ?= AT_BaseMultipleApps
+f ?= learning
 perm:
 	sudo chmod -R 777 ../$(f)/
 
 .PHONY: perma
-f ?= AT_BaseMultipleApps
+f ?= learning
 perma:
 	sudo chmod -R 777 ./$(f)/
 
