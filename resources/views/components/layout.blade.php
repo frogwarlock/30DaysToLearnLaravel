@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Website</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/js/app.js'])
 </head>
 <body class="h-full" >
 
@@ -35,7 +35,7 @@
                             @auth
                                 <form method="POST" action="/logout">
                                     @csrf
-                                    <x-form-button class="mt-5">Log Out</x-form-button>
+                                    <x-form-button class="">Log Out</x-form-button>
                                 </form>
                             @endauth
 
